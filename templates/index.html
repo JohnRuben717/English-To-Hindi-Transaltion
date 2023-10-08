@@ -64,42 +64,6 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script> -->
-    <!-- <script>
-        const form = document.getElementById('translation-form');
-        const input = document.getElementById('inputtext');
-        const result = document.getElementById('translation-result');
-        const textInput = document.getElementById('inputtext').value
-        form.addEventListener('submit', (event) => {
-            // event.preventDefault();
-            const textInput = document.getElementById('inputtext').value
-            fetch('/translate', {
-            method: 'POST',
-            body: textInput, // Sending the input field's value as the body
-                headers: {
-                    'Content-Type': 'text/plain' // Set Content-Type as text/plain
-                }
-            })
-                .then(response => response.text())
-                .then(data => {
-                    
-                    result.innerHTML = `
-                            <div class="alert alert-success" role="alert">
-                                ${data}
-                            </div>
-                        `;
-                })
-                .then(console.log(data))
-                .catch(error => {
-                    result.innerHTML = `
-                            <div class="alert alert-danger" role="alert">
-                                Error: ${error.message}
-                            </div>
-                        `;
-                });
-        });
-
-    </script> -->
     <script>
 
         document.getElementById('button1').addEventListener('click', function() {
