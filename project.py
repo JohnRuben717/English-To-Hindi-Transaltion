@@ -28,6 +28,7 @@ def index():
 @app.route('/translate', methods=['POST','GET'])
 def translate():
     input_text = request.data.decode('utf-8')
+    print(input_text)
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids
     outputs = model.generate(input_ids)
     translated_text = tokenizer.decode(outputs[0])

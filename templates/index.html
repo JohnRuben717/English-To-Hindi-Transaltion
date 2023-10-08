@@ -5,7 +5,7 @@
 
 <head>
     <title>Translation Website</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
      
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -22,9 +22,9 @@
         <form id="translation-form">
             <div class="mb-3">
                 <label for="input-text" class="form-label">Enter text to translate:</label>
-                <input type="text" class="form-control" id="input-text" name="input-text">
+                <input type="text" class="form-control" id="inputtext" name="input-text">
             </div>
-            <button type="submit" class="btn btn-info">Translate</button>
+            <button type="button" id = "button1" class="btn btn-info">Translate</button>
         </form>
         <div id="translation-result" class="mt-5"></div>
         <div class="row mt-5">
@@ -65,14 +65,14 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script> -->
-    <script>
+    <!-- <script>
         const form = document.getElementById('translation-form');
-        const input = document.getElementById('input-text');
+        const input = document.getElementById('inputtext');
         const result = document.getElementById('translation-result');
-        const textInput = document.getElementById('input-text').value
+        const textInput = document.getElementById('inputtext').value
         form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const text = input.value;
+            // event.preventDefault();
+            const textInput = document.getElementById('inputtext').value
             fetch('/translate', {
             method: 'POST',
             body: textInput, // Sending the input field's value as the body
@@ -82,12 +82,14 @@
             })
                 .then(response => response.text())
                 .then(data => {
+                    
                     result.innerHTML = `
                             <div class="alert alert-success" role="alert">
                                 ${data}
                             </div>
                         `;
                 })
+                .then(console.log(data))
                 .catch(error => {
                     result.innerHTML = `
                             <div class="alert alert-danger" role="alert">
@@ -97,9 +99,28 @@
                 });
         });
 
+    </script> -->
+    <script>
 
-
-
+        document.getElementById('button1').addEventListener('click', function() {
+        // Make an asynchronous POST request to the Flask server
+        const textInput = document.getElementById('inputtext').value;
+        fetch('/translate', {
+            method: 'POST',
+            body: textInput, // Sending the input field's value as the body
+                headers: {
+                    'Content-Type': 'text/plain' // Set Content-Type as text/plain
+                }
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('translation-result').innerHTML = data; // Log the response to the browser's console
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+        // });
     </script>
 </body>
 
