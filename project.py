@@ -31,6 +31,7 @@ def translate():
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids
     outputs = model.generate(input_ids)
     translated_text = tokenizer.decode(outputs[0])
+    print(translated_text)
     return translated_text
 
 if __name__ == '__main__':
