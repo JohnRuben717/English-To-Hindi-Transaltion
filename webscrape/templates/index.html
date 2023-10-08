@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Scraped Text</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Display Scraped Text</h1>
+    <button id="fetch-button">Fetch Text</button>
+    <div id="text-container"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#fetch-button').click(function() {
+                $.get('/scrape_text', function(data) {
+                    // Display the scraped text in the text container
+                    $('#text-container').html(data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
