@@ -11,30 +11,35 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" /> -->
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
+<style>
+    body {
+    font-family: "Poppins", sans-serif;
+    }
+</style>
 
 <body>
     <div class="container" id="main">
-        <h1 class="text-center my-5">English to Hindi Translator</h1>
+        <h1 class="text-center my-5">TRANSLATOR-PROTOTYPE</h1>
         <form id="translation-form">
             <div class="mb-3">
                 <label for="input-text" class="form-label">Enter text to translate:</label>
                 <input type="text" class="form-control" id="inputtext" name="input-text">
             </div>
-            <button type="button" id = "button1" class="btn btn-info">Translate</button>
+            <button type="button" id = "button1" class="btn btn-info" style="margin-left:43%;">Translate</button>
         </form>
-        <div id="translation-result" class="mt-5"></div>
+        <div id="translation-result" class="h4 mt-5 alert alert-success" style="visibility: hidden;"></div>
         <div class="row mt-5">
             <div class="col-md-4" id="one">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">OCR Translation</h5>
-                        <p class="card-text">OCR technology is a game-changer for translating government websites efficiently and accurately. By leveraging OCR for documents,
-                             governments can unlock numerous benefits such as enhanced speed, cost savings, preservation of formatting, multilingual capability, and improved accessibility. 
-                             Embracing this technology will not only streamline the translation process but also empower governments to connect with diverse populations effectively.</p>
+                        <p class="card-text">Delivering Artificial Intelligence (AI) and Optical Character Recognition technology, to translate text embedded within images with precision and ease</p>
                     </div>
                 </div>
             </div>
@@ -42,22 +47,15 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Location-based Translation</h5>
-                        <p class="card-text">Unlock the full potential of our AI Engine. Delve into the realm of accurate translation for all your government documents.
-                             Revolutionize the way you communicate through voice translation, making language limitations a thing of the past. 
-                             Seamlessly connect with people from diverse linguistic backgrounds through our multi-lingual translation based on IP.</p>
+                        <p class="card-text">Delivering location-based translation, tailoring content to the user's geographic location, enhancing relevance and accessibility.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4" id="three">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Voice Translation</h5>
-                        <p class="card-text">OCR technology offers several advantages for translating government documents. 
-                            It rapidly extracts text from scanned or PDF documents with exceptional accuracy, reducing the need for extensive human intervention and leading to cost savings.
-                             OCR captures not only the text but also the original formatting, ensuring that translated documents retain their visual integrity. 
-                             It enables the translation of documents into multiple languages simultaneously, catering to diverse populations and ensuring inclusivity. 
-                             With OCR-assisted document translation, government websites can better serve citizens by offering content in their native languages, 
-                             enhancing accessibility and promoting a more inclusive user experience</p>
+                        <h5 class="card-title center">Voice Translation</h5>
+                        <p class="card-text">Delivering efficient and optimized speech recognition, natural language processing, and text-to-speech </p>
                     </div>
                 </div>
             </div>
@@ -65,8 +63,9 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-
+        document.getElementById("")
         document.getElementById('button1').addEventListener('click', function() {
+            document.getElementById("translation-result").removeAttribute("style");
         // Make an asynchronous POST request to the Flask server
         const textInput = document.getElementById('inputtext').value;
         fetch('/translate', {
