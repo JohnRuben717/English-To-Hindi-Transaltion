@@ -68,7 +68,7 @@
             document.getElementById("translation-result").removeAttribute("style");
         // Make an asynchronous POST request to the Flask server
         const textInput = document.getElementById('inputtext').value;
-        fetch('/translate', {
+        fetch('/translate', { 
             method: 'POST',
             body: textInput, // Sending the input field's value as the body
                 headers: {
